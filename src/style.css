@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'genshinFont';
+  src: url(ja-jp.ttf);
+}
+
+body{
+  background-color: black;
+  color:white;
+  font-family: genshinFont;
+}
