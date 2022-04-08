@@ -1,3 +1,46 @@
+@font-face {
+  font-family: 'genshinFont';
+  src: url(ja-jp.ttf);
+}
+
+body{
+  background-color: black;
+  color:white;
+  font-family: genshinFont;
+}
+
 .title{
-  font-size: 100px;
+  text-align: left;
+  font-size: 30px;
+}
+.characterWrapper{
+  display: flex;
+}
+
+.characterBox{
+  padding-right: 10px;
+}
+
+.statBox{
+  display:flexbox;
+  width: 340px;
+}
+
+/* wrapper */
+.statLabel{
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+/* stat for input */
+.statLabelText{
+  vertical-align: middle;
+}
+/* input box for stat value */
+.statLabelInput{
+  font-family: genshinFont;
+  width:30%;
+  margin-right: 20px;
 }

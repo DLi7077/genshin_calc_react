@@ -1,6 +1,5 @@
 import React from 'react'
 import StatLabel from './StatLabel'
-import style from './style.css'
 /**
  * @brief generates a statBox
  * @param title {string} - title of the statbox
@@ -13,15 +12,17 @@ export default function StatBox({title, statList}) {
     console.log('in statbox')
     return (
       statList.map(stat=>{
-        return <StatLabel value ={stat}/>
+        return <StatLabel value ={stat} key  ={title+stat}/>
       })
     );
   }
   return (
-    <>
+    <div className='characterBox'>
       <div className= 'title'>{title}</div>
-      {generateStatBox()}
-    </>
+      <div className=  'statBox'>
+        {generateStatBox()}
+      </div>
+    </div>
   )
   
 }
