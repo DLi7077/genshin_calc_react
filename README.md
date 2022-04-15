@@ -1,4 +1,4 @@
-## Site is being hosted on: https://dl-genshin-calc.herokuapp.com/
+## Site is being hosted at: [https://dl-genshin-calc.herokuapp.com/]
 
 ## Available Scriptss
 
