@@ -1,0 +1,4 @@
+{
+  "debug.javascript.automaticallyTunnelRemoteServer": false,
+  "java.dependency.refreshDelay": 1000
+}
