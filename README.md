@@ -1,4 +1,4 @@
-## Site is being hosted at: [https://dl-genshin-calc.herokuapp.com/]
+## Site is being hosted at: https://dli7077.github.io/genshin_calc_react/
 
 # For a clean install:
 #### `git clone https://github.com/DLi7077/genshin_calc_react`
