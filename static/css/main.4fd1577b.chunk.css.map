@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,WACE,yBAA0B,CAC1B,4DACF,CAEA,KACE,qBAAuB,CACvB,UAAW,CACX,uBACF","file":"main.4fd1577b.chunk.css","sourcesContent":["@font-face {\r\n  font-family: 'genshinFont';\r\n  src: url(ja-jp.ttf);\r\n}\r\n\r\nbody{\r\n  background-color: black;\r\n  color:white;\r\n  font-family: genshinFont;\r\n}\r\n"]}

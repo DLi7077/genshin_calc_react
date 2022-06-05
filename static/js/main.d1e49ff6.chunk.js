@@ -1,0 +1,2 @@
+(this.webpackJsonpgenshin_calc_react=this.webpackJsonpgenshin_calc_react||[]).push([[0],{3:function(e,n,t){e.exports=t(9)},8:function(e,n,t){},9:function(e,n,t){"use strict";t.r(n);var c=t(0),a=t.n(c),r=t(2),l=t.n(r);var o=function(){return a.a.createElement(a.a.Fragment,null,"Empty project")};t(8);l.a.render(a.a.createElement(a.a.StrictMode,null,a.a.createElement(o,null)),document.getElementById("root"))}},[[3,1,2]]]);
+//# sourceMappingURL=main.d1e49ff6.chunk.js.map
