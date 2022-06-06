@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/genshin_calc_react/static/css/main.4fd1577b.chunk.css",
-    "main.js": "/genshin_calc_react/static/js/main.d1e49ff6.chunk.js",
-    "main.js.map": "/genshin_calc_react/static/js/main.d1e49ff6.chunk.js.map",
+    "main.js": "/genshin_calc_react/static/js/main.84f0ef8f.chunk.js",
+    "main.js.map": "/genshin_calc_react/static/js/main.84f0ef8f.chunk.js.map",
     "runtime-main.js": "/genshin_calc_react/static/js/runtime-main.6ba978b4.js",
     "runtime-main.js.map": "/genshin_calc_react/static/js/runtime-main.6ba978b4.js.map",
-    "static/js/2.25e3d5ef.chunk.js": "/genshin_calc_react/static/js/2.25e3d5ef.chunk.js",
-    "static/js/2.25e3d5ef.chunk.js.map": "/genshin_calc_react/static/js/2.25e3d5ef.chunk.js.map",
+    "static/js/2.32765d1e.chunk.js": "/genshin_calc_react/static/js/2.32765d1e.chunk.js",
+    "static/js/2.32765d1e.chunk.js.map": "/genshin_calc_react/static/js/2.32765d1e.chunk.js.map",
     "index.html": "/genshin_calc_react/index.html",
-    "precache-manifest.d8d29617f9bb8c07060934a4aec1af2f.js": "/genshin_calc_react/precache-manifest.d8d29617f9bb8c07060934a4aec1af2f.js",
+    "precache-manifest.b0dbe9f666db8fa7c4a5efb67d57ccf5.js": "/genshin_calc_react/precache-manifest.b0dbe9f666db8fa7c4a5efb67d57ccf5.js",
     "service-worker.js": "/genshin_calc_react/service-worker.js",
     "static/css/main.4fd1577b.chunk.css.map": "/genshin_calc_react/static/css/main.4fd1577b.chunk.css.map",
-    "static/js/2.25e3d5ef.chunk.js.LICENSE.txt": "/genshin_calc_react/static/js/2.25e3d5ef.chunk.js.LICENSE.txt",
+    "static/js/2.32765d1e.chunk.js.LICENSE.txt": "/genshin_calc_react/static/js/2.32765d1e.chunk.js.LICENSE.txt",
     "static/media/style.css": "/genshin_calc_react/static/media/ja-jp.47e3336a.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.6ba978b4.js",
-    "static/js/2.25e3d5ef.chunk.js",
+    "static/js/2.32765d1e.chunk.js",
     "static/css/main.4fd1577b.chunk.css",
-    "static/js/main.d1e49ff6.chunk.js"
+    "static/js/main.84f0ef8f.chunk.js"
   ]
 }
