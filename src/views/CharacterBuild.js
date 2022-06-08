@@ -11,7 +11,7 @@ export default function CharacterBuild() {
     attack_base: 733,
     attack_total: 1675,
     DMG_Bonus_Cryo: 46,
-    crit_damage : 194.6
+    crit_damage: 194.6
   };
 
   //cleans up inputted build (above)
