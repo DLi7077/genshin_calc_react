@@ -1,5 +1,5 @@
 import React from "react";
-import { get, map, keys, values } from "lodash";
+import { get, map, keys } from "lodash";
 import { Box } from "@material-ui/core";
 import CharacterClass from "../classes/CharacterClass";
 import CharacterBaseDamage from "../utils/CharacterBaseDamage";
@@ -11,7 +11,7 @@ export default function CharacterBuild() {
     attack_base: 733,
     attack_total: 1675,
     DMG_Bonus_Cryo: 46,
-    crit_damage: 194.6
+    crit_damage: 194.6,
   };
 
   //cleans up inputted build (above)
@@ -26,7 +26,6 @@ export default function CharacterBuild() {
             <Box style={{ justifyContent: "flex-start", minWidth: "250px" }}>
               {stats}
             </Box>
-
             <Box style={{ justifyContent: "flex-end", minWidth: "100px" }}>
               {get(charBuild, stats)}
             </Box>
@@ -39,7 +38,6 @@ export default function CharacterBuild() {
             <Box style={{ justifyContent: "flex-start", minWidth: "250px" }}>
               {talent}
             </Box>
-
             <Box style={{ justifyContent: "flex-end", minWidth: "100px" }}>
               {get(get(baseDamage, talent), "damage")}
             </Box>

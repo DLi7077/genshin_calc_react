@@ -59,7 +59,6 @@ function CharacterBaseDamage(characterBuild) {
    * @returns {Object} an Object of talent Damages after multipliers
    */
   const GetDamageWithMultipliers = (multipliers, baseDamage) => {
-    console.log(baseDamage, multipliers)
     let damageWithMultipliers = baseDamage;
 
     map(keys(baseDamage), talentName => {
