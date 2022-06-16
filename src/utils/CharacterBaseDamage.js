@@ -30,7 +30,7 @@ function CharacterBaseDamage(characterBuild) {
         damage: baseValue * talentScale
       };
     });
-    
+
     return AbilityBaseDamage;
   };
 
@@ -40,12 +40,13 @@ function CharacterBaseDamage(characterBuild) {
    * @returns {Object} number multipliers for each element type
    */
   const GetMultipliers = characterBuild => {
-    const critMultiplier = 1 + characterBuild.crit_damage / 100;
+    const critMultiplier = 1 + characterBuild.crit_damage / 100 ?? 0;
+    const universalBonus = characterBuild.DMG_Bonus_All / 100 ?? 0;
     let damageBonuses = {};
 
     map(keys(DAMAGE_ELEMENTS), element => {
       damageBonuses[element] =
-        (1 + get(characterBuild, DAMAGE_ELEMENTS[element]) / 100) *
+        (1 + universalBonus + get(characterBuild, DAMAGE_ELEMENTS[element]) / 100) *
         critMultiplier;
     });
 

@@ -2,127 +2,137 @@ export const STAT_FIELDS = [
   {
     label: "Name",
     field: "character_name",
-    defaultValue: "Chongyun"
+    defaultValue: "Chongyun",
+    disabled: true,
   },
   {
     label: "Character Level",
     field: "character_level",
-    defaultValue: 90
-  },
-  {
-    label: "Attack Talent",
-    field: "talent_level_attack",
-    defaultValue: 1
-  },
-  {
-    label: "Skill Talent",
-    field: "elemental_skill_talent",
-    defaultValue: 1
-  },
-  {
-    label: "Burst Talent",
-    field: "elemental_burst_talent",
-    defaultValue: 1
+    defaultValue: 90,
   },
   {
     label: "Base HP",
     field: "hp_base",
-    defaultValue: 10984
+    defaultValue: 10984,
   },
   {
     label: "MAX HP",
     field: "hp_total",
-    defaultValue: 10984
+    defaultValue: 10984,
   },
   {
     label: "Base Attack",
     field: "attack_base",
-    defaultValue: 223
+    defaultValue: 223,
   },
   {
     label: "Total Attack",
     field: "attack_total",
-    defaultValue: 223
+    defaultValue: 223,
   },
   {
     label: "Base DEF",
     field: "def_base",
-    defaultValue: 648
+    defaultValue: 648,
   },
   {
-    label :"Total DEF",
+    label: "Total DEF",
     field: "def_total",
-    defaultValue: 648
+    defaultValue: 648,
   },
   {
-    label :"Elemental Mastery",
+    label: "Elemental Mastery",
     field: "elemental_mastery",
-    defaultValue: 0
+    defaultValue: 0,
   },
   {
-    label :"Crit Rate",
+    label: "Crit Rate",
     field: "crit_rate",
-    defaultValue: 5
+    defaultValue: 5,
   },
   {
-    label :"Crit Damage",
+    label: "Crit Damage",
     field: "crit_damage",
-    defaultValue: 15
+    defaultValue: 15,
   },
   {
-    label :"Healing Bonus",
+    label: "Healing Bonus",
     field: "healing_bonus",
-    defaultValue: 0
+    defaultValue: 0,
   },
   {
-    label :"Energy Recharge",
+    label: "Energy Recharge",
     field: "energy_recharge",
-    defaultValue: 100
+    defaultValue: 100,
   },
   {
-    label: "Anemo",
+    element: "Anemo",
     field: "DMG_Bonus_Anemo",
-    defaultValue: 0
+    label: "Anemo DMG Bonus",
+    defaultValue: 0,
   },
   {
-    label: "Cryo",
+    element: "Cryo",
     field: "DMG_Bonus_Cryo",
-    defaultValue: 0
+    label: "Cryo DMG Bonus",
+    defaultValue: 0,
   },
   {
-    label: "Dendro",
+    element: "Dendro",
     field: "DMG_Bonus_Dendro",
-    defaultValue: 0
+    label: "Dendro DMG Bonus",
+    defaultValue: 0,
   },
   {
-    label: "Electro",
+    element: "Electro",
     field: "DMG_Bonus_Electro",
-    defaultValue: 0
+    label: "Electro DMG Bonus",
+    defaultValue: 0,
   },
   {
-    label: "Geo",
+    element: "Geo",
     field: "DMG_Bonus_Geo",
-    defaultValue: 0
+    label: "Geo DMG Bonus",
+    defaultValue: 0,
   },
   {
-    label: "Hydro",
+    element: "Hydro",
     field: "DMG_Bonus_Hydro",
-    defaultValue: 0
+    label: "Hydro DMG Bonus",
+    defaultValue: 0,
   },
   {
-    label: "Pyro",
+    element: "Pyro",
     field: "DMG_Bonus_Pyro",
-    defaultValue: 0
+    label: "Pyro DMG Bonus",
+    defaultValue: 0,
   },
   {
-    label: "Physical",
+    element: "Physical",
     field: "DMG_Bonus_Physical",
-    defaultValue: 0
+    label: "Physical DMG Bonus",
+    defaultValue: 0,
   },
   {
-    label: "Other",
+    element: "Other",
     field: "DMG_Bonus_All",
-    defaultValue: 0
+    label: "Other DMG Bonus",
+    defaultValue: 0,
+  },
+  {
+    label: "Attack Talent",
+    field: "talent_level_attack",
+    defaultValue: 1,
+  },
+  {
+    label: "Skill Talent",
+    field: "elemental_skill_talent",
+    defaultValue: 1,
+  },
+  {
+    label: "Burst Talent",
+    field: "elemental_burst_talent",
+    defaultValue: 1,
   },
 ];
 
@@ -134,5 +144,6 @@ export const DAMAGE_ELEMENTS = {
   Geo: "DMG_Bonus_Geo",
   Hydro: "DMG_Bonus_Hydro",
   Pyro: "DMG_Bonus_Pyro",
-  Physical: "DMG_Bonus_Physical"
+  Physical: "DMG_Bonus_Physical",
+  All: "DMG_Bonus_All",
 };

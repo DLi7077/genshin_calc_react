@@ -18,8 +18,7 @@ class CharacterBuild {
   // displays character stats
   display() {
     console.log(this);
-    return this;
   }
 }
 
-export default CharacterBuild ?? 0;
+export default CharacterBuild;

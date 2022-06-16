@@ -2,6 +2,7 @@ const CharacterTalentScalings = {
   Chongyun: {
     elemental_skill_talent: {
       name: "elemental_skill",
+      label: "Elemental Skill",
       element_type: "Cryo",
       scaling_stat: "attack_total",
       scaling: [
@@ -24,6 +25,7 @@ const CharacterTalentScalings = {
     },
     elemental_burst_talent: {
       name: "elemental_burst",
+      label: "Elemental Burst",
       element_type: "Cryo",
       scaling_stat: "attack_total",
       scaling: [

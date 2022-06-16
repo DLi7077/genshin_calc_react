@@ -5,7 +5,7 @@ import { STAT_FIELDS } from "../constants/EnemyStats";
  * @description A class that represents enemy stats
  * @param {Object} stats - enemy information
  */
-class EnemyStats {
+class EnemyBuild {
   constructor(stats) {
     _.map(STAT_FIELDS, (stat) => {
       const statType = _.get(stat, "field");
@@ -18,8 +18,7 @@ class EnemyStats {
   // displays enemy stats
   display() {
     console.log(this);
-    return this;
   }
 }
 
-export default EnemyStats;
+export default EnemyBuild;
