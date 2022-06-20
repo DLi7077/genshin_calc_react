@@ -1,6 +1,6 @@
-import { get, keys, map } from "lodash";
-import CharacterTalentScalings from "../constants/CharacterTalentScalings";
-import { DAMAGE_ELEMENTS } from "../constants/CharacterStats";
+import { get, keys, map } from 'lodash';
+import CharacterTalentScalings from '../constants/CharacterTalentScalings';
+import { DAMAGE_ELEMENTS } from '../constants/CharacterStats';
 
 /**
  * @description calculates the damage output for a character's stats
@@ -21,12 +21,12 @@ function CharacterBaseDamage(characterBuild) {
       const talentDetails = get(talentInfo, talent);
       const talentLevel = get(characterBuild, talent);
 
-      const talentScale = get(talentDetails, "scaling")[talentLevel - 1] / 100;
-      const scalingStat = get(talentDetails, "scaling_stat");
+      const talentScale = get(talentDetails, 'scaling')[talentLevel - 1] / 100;
+      const scalingStat = get(talentDetails, 'scaling_stat');
       const baseValue = get(characterBuild, scalingStat);
 
-      AbilityBaseDamage[get(talentDetails, "name")] = {
-        element: get(talentDetails, "element_type"),
+      AbilityBaseDamage[get(talentDetails, 'name')] = {
+        element: get(talentDetails, 'element_type'),
         damage: baseValue * talentScale
       };
     });
@@ -46,7 +46,9 @@ function CharacterBaseDamage(characterBuild) {
 
     map(keys(DAMAGE_ELEMENTS), element => {
       damageBonuses[element] =
-        (1 + universalBonus + get(characterBuild, DAMAGE_ELEMENTS[element]) / 100) *
+        (1 +
+          universalBonus +
+          get(characterBuild, DAMAGE_ELEMENTS[element]) / 100) *
         critMultiplier;
     });
 
@@ -64,9 +66,9 @@ function CharacterBaseDamage(characterBuild) {
 
     map(keys(baseDamage), talentName => {
       const talentDetails = get(baseDamage, talentName);
-      const damageElement = get(talentDetails, "element");
+      const damageElement = get(talentDetails, 'element');
       const elementMultiplier = get(multipliers, damageElement) ?? 1;
-      damageWithMultipliers[talentName]["damage"] *= elementMultiplier;
+      damageWithMultipliers[talentName]['damage'] *= elementMultiplier;
     });
 
     return damageWithMultipliers;

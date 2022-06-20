@@ -1,27 +1,27 @@
 export const STAT_FIELDS = [
   {
-    label: "Name",
-    field: "enemy_name",
-    defaultValue: "Hilichurl",
-    type: "text",
+    label: 'Name',
+    field: 'enemy_name',
+    defaultValue: 'Hilichurl',
+    type: 'text'
   },
   {
-    label: "Enemy Level",
-    field: "enemy_level",
+    label: 'Enemy Level',
+    field: 'enemy_level',
     defaultValue: 90,
-    type: "number",
+    type: 'number'
   },
   {
-    label: "Enemy Resistance %",
-    field: "resPercent",
+    label: 'Enemy Resistance %',
+    field: 'resPercent',
     defaultValue: 10,
-    type: "number",
+    type: 'number'
   },
   {
-    label: "Affected Element",
-    field: "affected_element",
+    label: 'Affected Element',
+    field: 'affected_element',
     defaultValue: 'None',
-    type: "option",
+    type: 'option',
     disabled: true
-  },
+  }
 ];

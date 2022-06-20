@@ -1,17 +1,17 @@
-import React from "react";
-import DamageCalculator from "./views";
+import React from 'react';
+import DamageCalculator from './views';
 // import GridDisplay from "./views/GridDisplay";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 const theme = createMuiTheme({
   palette: {
-    type: "dark",
+    type: 'dark',
     primary: {
-      main: "#90caf9",
-    },
+      main: '#90caf9'
+    }
   },
   typography: {
-    fontFamily: "genshinFont",
-  },
+    fontFamily: 'genshinFont'
+  }
 });
 
 function App() {

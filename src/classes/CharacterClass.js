@@ -1,5 +1,5 @@
-import _ from "lodash";
-import { STAT_FIELDS } from "../constants/CharacterStats";
+import _ from 'lodash';
+import { STAT_FIELDS } from '../constants/CharacterStats';
 
 /**
  * @description A class that represents a character build
@@ -8,8 +8,8 @@ import { STAT_FIELDS } from "../constants/CharacterStats";
 class CharacterBuild {
   constructor(build) {
     _.map(STAT_FIELDS, stat => {
-      const statType = _.get(stat, "field");
-      const defaultValue = _.get(stat, "defaultValue");
+      const statType = _.get(stat, 'field');
+      const defaultValue = _.get(stat, 'defaultValue');
 
       this[statType] = _.get(build, statType) ?? defaultValue;
     });

@@ -31,7 +31,8 @@ function CharacterBuild(props) {
                     minWidth: '250px',
                     textAlign: 'right'
                   }}
-                  marginRight="20px">
+                  marginRight="20px"
+                >
                   {stats.label}
                 </Box>
                 <Box style={{ justifyContent: 'flex-end', minWidth: '100px' }}>
@@ -47,7 +48,8 @@ function CharacterBuild(props) {
                     minWidth: '250px',
                     textAlign: 'right'
                   }}
-                  marginRight="20px">
+                  marginRight="20px"
+                >
                   {stats.label}
                 </Box>
                 <Box style={{ justifyContent: 'flex-end', minWidth: '100px' }}>
@@ -65,10 +67,8 @@ function CharacterBuild(props) {
                     onChange={e => {
                       props.update(stats.field, parseFloat(e.target.value));
                     }}
-                    defaultValue={get(
-                      props.characterBuild,
-                      stats.field
-                    )}></TextField>
+                    defaultValue={get(props.characterBuild, stats.field)}
+                  ></TextField>
                 </Box>
               </Box>
             )}

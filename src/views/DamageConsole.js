@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { get, keys, map } from 'lodash';
-import { Box, makeStyles } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import CharacterTalentScalings from '../constants/CharacterTalentScalings';
 import CharacterBaseDamage from '../utils/CharacterBaseDamage';
 import {

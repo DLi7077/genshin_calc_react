@@ -1,4 +1,3 @@
-import { keys } from "lodash";
 /**
  * @description Calculates the melt/vaporize multiplier for a character
  * @param {string} damageElement - a valid element
@@ -10,12 +9,12 @@ export default function ElementalReactionMultiplier(
   damageElement,
   statusElement
 ) {
-  const elementInteract = damageElement + "->" + statusElement;
+  const elementInteract = damageElement + '->' + statusElement;
   const reactionMap = {
-    "Pyro->Cryo": 2,
-    "Cyro->Pyro": 1.5,
-    "Hydro->Pyro": 2,
-    "Pyro->Hydro": 1.5,
+    'Pyro->Cryo': 2,
+    'Cyro->Pyro': 1.5,
+    'Hydro->Pyro': 2,
+    'Pyro->Hydro': 1.5
   };
   const reactionMultiplier = reactionMap[elementInteract];
   if (!reactionMultiplier) return 1;
