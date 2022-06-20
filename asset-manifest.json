@@ -1,23 +1,30 @@
 {
   "files": {
     "main.css": "/genshin_calc_react/static/css/main.4fd1577b.chunk.css",
-    "main.js": "/genshin_calc_react/static/js/main.84f0ef8f.chunk.js",
-    "main.js.map": "/genshin_calc_react/static/js/main.84f0ef8f.chunk.js.map",
+    "main.js": "/genshin_calc_react/static/js/main.899fe337.chunk.js",
+    "main.js.map": "/genshin_calc_react/static/js/main.899fe337.chunk.js.map",
     "runtime-main.js": "/genshin_calc_react/static/js/runtime-main.6ba978b4.js",
     "runtime-main.js.map": "/genshin_calc_react/static/js/runtime-main.6ba978b4.js.map",
-    "static/js/2.32765d1e.chunk.js": "/genshin_calc_react/static/js/2.32765d1e.chunk.js",
-    "static/js/2.32765d1e.chunk.js.map": "/genshin_calc_react/static/js/2.32765d1e.chunk.js.map",
+    "static/js/2.61a38411.chunk.js": "/genshin_calc_react/static/js/2.61a38411.chunk.js",
+    "static/js/2.61a38411.chunk.js.map": "/genshin_calc_react/static/js/2.61a38411.chunk.js.map",
     "index.html": "/genshin_calc_react/index.html",
-    "precache-manifest.b0dbe9f666db8fa7c4a5efb67d57ccf5.js": "/genshin_calc_react/precache-manifest.b0dbe9f666db8fa7c4a5efb67d57ccf5.js",
+    "precache-manifest.b7ecf23ee08ea67ccd1a1b2685269b21.js": "/genshin_calc_react/precache-manifest.b7ecf23ee08ea67ccd1a1b2685269b21.js",
     "service-worker.js": "/genshin_calc_react/service-worker.js",
     "static/css/main.4fd1577b.chunk.css.map": "/genshin_calc_react/static/css/main.4fd1577b.chunk.css.map",
-    "static/js/2.32765d1e.chunk.js.LICENSE.txt": "/genshin_calc_react/static/js/2.32765d1e.chunk.js.LICENSE.txt",
+    "static/js/2.61a38411.chunk.js.LICENSE.txt": "/genshin_calc_react/static/js/2.61a38411.chunk.js.LICENSE.txt",
+    "static/media/Element_Anemo.png": "/genshin_calc_react/static/media/Element_Anemo.3564b159.png",
+    "static/media/Element_Cryo.png": "/genshin_calc_react/static/media/Element_Cryo.836ae8df.png",
+    "static/media/Element_Dendro.png": "/genshin_calc_react/static/media/Element_Dendro.a12eab81.png",
+    "static/media/Element_Electro.png": "/genshin_calc_react/static/media/Element_Electro.af270725.png",
+    "static/media/Element_Geo.png": "/genshin_calc_react/static/media/Element_Geo.5343adb3.png",
+    "static/media/Element_Hydro.png": "/genshin_calc_react/static/media/Element_Hydro.407d4441.png",
+    "static/media/Element_Pyro.png": "/genshin_calc_react/static/media/Element_Pyro.ea877192.png",
     "static/media/style.css": "/genshin_calc_react/static/media/ja-jp.47e3336a.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.6ba978b4.js",
-    "static/js/2.32765d1e.chunk.js",
+    "static/js/2.61a38411.chunk.js",
     "static/css/main.4fd1577b.chunk.css",
-    "static/js/main.84f0ef8f.chunk.js"
+    "static/js/main.899fe337.chunk.js"
   ]
 }
