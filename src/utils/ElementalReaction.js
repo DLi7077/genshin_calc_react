@@ -1,7 +1,7 @@
 /**
  * @description Calculates the melt/vaporize multiplier for a character
- * @param {string} damageElement - a valid element
- * @param {string} statusElement -another valid element
+ * @param {string} damageElement - element to be applied on enemy
+ * @param {string} statusElement - element currently on enemy
  * @returns
  */
 export default function ElementalReactionMultiplier(
