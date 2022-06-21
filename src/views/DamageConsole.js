@@ -8,6 +8,7 @@ import {
   DMGReductionByDefense,
   DMGReductionByResistance
 } from '../utils/EnemyDefense';
+import ArtifactModifiers from '../constants/ArtifactModifiers';
 
 /**
  * @description Calculates a character's damage for each talent on the enemy
@@ -34,20 +35,37 @@ function DamageConsole(props) {
    */
 
   const baseDamage = CharacterBaseDamage(props.characterBuild);
+  const dmgObj = {};
+  map(keys(talentInfo), talent => {
+    const talentName = get(get(talentInfo, talent), 'name');
+    const talentProps = get(baseDamage, talentName);
+    const talentDamage =
+      get(talentProps, 'damage') *
+      reductionFromDefense *
+      reductionFromResistance;
+    const damageElement = get(talentProps, 'element');
+
+    dmgObj[talent] = {
+      dmg: talentDamage,
+      field: talent,
+      element: damageElement
+    };
+  });
+  console.log(dmgObj);
+  console.log(keys(talentInfo));
+  //Now have to apply artifact buffs
+  console.log(props.artifactActives);
+  map(keys(props.artifactActives), activeBuff => {
+    console.log(ArtifactModifiers[activeBuff]);
+  })
   return (
     <Box>
-      {map(keys(talentInfo), talent => {
-        const talentName = get(get(talentInfo, talent), 'name');
-        const talentProps = get(baseDamage, talentName);
-        const talentDamage =
-          get(talentProps, 'damage') *
-          reductionFromDefense *
-          reductionFromResistance;
-        const damageElement = get(talentProps, 'element');
-
+      {map(dmgObj, abilityInfo => {
+        console.log(abilityInfo);
         return (
-          <Box key={talent}>
-            {get(talentInfo, `${talent}.label`)} {damageElement} {talentDamage}
+          <Box key={abilityInfo.field}>
+            {get(talentInfo, `${abilityInfo.field}.label`)}{' '}
+            {abilityInfo.element} {abilityInfo.dmg}
           </Box>
         );
       })}
