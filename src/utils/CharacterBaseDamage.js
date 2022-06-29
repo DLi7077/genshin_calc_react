@@ -1,6 +1,6 @@
-import { get, keys, map } from 'lodash';
+import { assign, get, keys, map } from 'lodash';
 import CharacterTalentScalings from '../constants/CharacterTalentScalings';
-import { DAMAGE_ELEMENTS } from '../constants/CharacterStats';
+import { DAMAGE_ELEMENTS, ELEMENTS } from '../constants/CharacterStats';
 
 /**
  * @description calculates the damage output for a character's stats
@@ -40,16 +40,16 @@ function CharacterBaseDamage(characterBuild) {
    * @returns {Object} number multipliers for each element type
    */
   const GetMultipliers = characterBuild => {
-    const critMultiplier = 1 + characterBuild.crit_damage / 100 ?? 0;
     const universalBonus = characterBuild.DMG_Bonus_All / 100 ?? 0;
-    let damageBonuses = {};
+    const elementalBonus = characterBuild.DMG_Bonus_Elemental / 100 ?? 0;
 
+    const damageBonuses = {};
     map(keys(DAMAGE_ELEMENTS), element => {
       damageBonuses[element] =
-        (1 +
-          universalBonus +
-          get(characterBuild, DAMAGE_ELEMENTS[element]) / 100) *
-        critMultiplier;
+        universalBonus + get(characterBuild, DAMAGE_ELEMENTS[element]) / 100;
+      if (ELEMENTS.includes(element)) {
+        damageBonuses[element] += elementalBonus;
+      }
     });
 
     return damageBonuses;
@@ -63,12 +63,15 @@ function CharacterBaseDamage(characterBuild) {
    */
   const GetDamageWithMultipliers = (multipliers, baseDamage) => {
     let damageWithMultipliers = baseDamage;
-
     map(keys(baseDamage), talentName => {
-      const talentDetails = get(baseDamage, talentName);
-      const damageElement = get(talentDetails, 'element');
+      const talentBaseDMG = get(baseDamage, talentName);
+      const talentDMGBonus =
+        get(characterBuild, `DMG_Bonus_${talentName}`) / 100;
+      const damageElement = get(talentBaseDMG, 'element');
       const elementMultiplier = get(multipliers, damageElement) ?? 1;
-      damageWithMultipliers[talentName]['damage'] *= elementMultiplier;
+
+      const totalBonus = 1 + talentDMGBonus + elementMultiplier;
+      damageWithMultipliers[talentName]['damage'] *= totalBonus;
     });
 
     return damageWithMultipliers;
@@ -77,10 +80,20 @@ function CharacterBaseDamage(characterBuild) {
   const damageMultipliers = GetMultipliers(characterBuild);
   const baseAbilityDamage = GetBaseDamage(characterBuild);
 
+  //get damage after dmg bonuses
   const damageWithMultipliers = GetDamageWithMultipliers(
     damageMultipliers,
     baseAbilityDamage
   );
+
+  //add on crit dmg multiplier
+  const critMultiplier = 1 + characterBuild.crit_damage / 100 ?? 0;
+  map(keys(damageWithMultipliers), talentDamage => {
+    const currTalentDMG = get(damageWithMultipliers, `${talentDamage}.damage`);
+    assign(damageWithMultipliers[talentDamage], {
+      damage: currTalentDMG * critMultiplier
+    });
+  });
 
   return damageWithMultipliers;
 }
