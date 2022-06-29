@@ -120,6 +120,22 @@ export const STAT_FIELDS = [
     defaultValue: 0
   },
   {
+    element: 'Elemental',
+    field: 'DMG_Bonus_Elemental',
+    label: 'Elemental DMG Bonus',
+    defaultValue: 0
+  },
+  {
+    field: 'DMG_Bonus_elemental_skill',
+    label: 'Skill DMG Bonus',
+    defaultValue: 0
+  },
+  {
+    field: 'DMG_Bonus_elemental_burst',
+    label: 'Burst DMG Bonus',
+    defaultValue: 0
+  },
+  {
     label: 'Attack Talent',
     field: 'talent_level_attack',
     defaultValue: 1
@@ -144,6 +160,15 @@ export const DAMAGE_ELEMENTS = {
   Geo: 'DMG_Bonus_Geo',
   Hydro: 'DMG_Bonus_Hydro',
   Pyro: 'DMG_Bonus_Pyro',
-  Physical: 'DMG_Bonus_Physical',
-  All: 'DMG_Bonus_All'
+  Physical: 'DMG_Bonus_Physical'
 };
+
+export const ELEMENTS = [
+  'Anemo',
+  'Cryo',
+  'Dendro',
+  'Electro',
+  'Geo',
+  'Hydro',
+  'Pyro'
+];

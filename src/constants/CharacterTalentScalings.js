@@ -27,6 +27,7 @@ const CharacterTalentScalings = {
       name: 'elemental_burst',
       label: 'Elemental Burst',
       element_type: 'Cryo',
+      talent_type: 'burst',
       scaling_stat: 'attack_total',
       scaling: [
         142.4,
