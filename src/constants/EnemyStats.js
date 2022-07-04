@@ -8,7 +8,7 @@ export const STAT_FIELDS = [
   {
     label: 'Enemy Level',
     field: 'enemy_level',
-    defaultValue: 90,
+    defaultValue: 93,
     type: 'number'
   },
   {

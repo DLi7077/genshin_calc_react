@@ -12,7 +12,7 @@ export default function ElementalReactionMultiplier(
   const elementInteract = damageElement + '->' + statusElement;
   const reactionMap = {
     'Pyro->Cryo': 2,
-    'Cyro->Pyro': 1.5,
+    'Cryo->Pyro': 1.5,
     'Hydro->Pyro': 2,
     'Pyro->Hydro': 1.5
   };
