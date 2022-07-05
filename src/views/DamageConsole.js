@@ -8,6 +8,7 @@ import {
   DMGReductionByDefense,
   DMGReductionByResistance
 } from '../utils/EnemyDefense';
+import ArtifactBuffCharBuild from '../utils/CharacterArtifactUpdater';
 
 /**
  * @description Calculates a character's damage for each talent on the enemy
@@ -20,12 +21,6 @@ function DamageConsole(props) {
     get(props.characterBuild, 'character_name')
   );
 
-  const reductionFromDefense = DMGReductionByDefense(
-    props.characterBuild,
-    props.enemyStats
-  );
-  const reductionFromResistance = DMGReductionByResistance(props.enemyStats);
-
   /**
    * @description an Object that contains baseDamage Info for each talent
    * ex:
@@ -33,10 +28,37 @@ function DamageConsole(props) {
    * @prop {elemental_skill}: {element: 'Cryo', damage: 12394.5237372}
    */
 
-  const baseDamage = CharacterBaseDamage(props.characterBuild);
   return (
     <Box>
       {map(keys(talentInfo), talent => {
+        //Now must apply artifact buffs
+        let evolvingArtifactCharacter = JSON.parse(
+          JSON.stringify(props.characterBuild)
+        );
+        let evolvingArtifactEnemy = JSON.parse(
+          JSON.stringify(props.enemyStats)
+        );
+        map(keys(props.artifactActives), activeBuff => {
+          //Check if buff is checked with props
+          if (get(props.artifactActives, activeBuff)) {
+            const updatedEntities = ArtifactBuffCharBuild(
+              evolvingArtifactCharacter,
+              evolvingArtifactEnemy,
+              activeBuff
+            );
+            evolvingArtifactCharacter = get(updatedEntities, 'newCharacter');
+            evolvingArtifactEnemy = get(updatedEntities, 'newEnemy');
+          }
+        });
+        const reductionFromDefense = DMGReductionByDefense(
+          evolvingArtifactCharacter,
+          evolvingArtifactEnemy
+        );
+        const reductionFromResistance = DMGReductionByResistance(
+          evolvingArtifactEnemy
+        );
+
+        const baseDamage = CharacterBaseDamage(evolvingArtifactCharacter);
         const talentName = get(get(talentInfo, talent), 'name');
         const talentProps = get(baseDamage, talentName);
         const talentDamage =
@@ -44,7 +66,6 @@ function DamageConsole(props) {
           reductionFromDefense *
           reductionFromResistance;
         const damageElement = get(talentProps, 'element');
-
         return (
           <Box key={talent}>
             {get(talentInfo, `${talent}.label`)} {damageElement} {talentDamage}

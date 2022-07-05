@@ -5,6 +5,7 @@ import CharacterClass from '../classes/CharacterClass';
 import EnemyClass from '../classes/EnemyClass';
 import EnemyStatus from './EnemyStatus';
 import DamageConsole from './DamageConsole';
+import ArtifactBuffs from './ArtifactBuffs';
 
 export default function DamageCalculator() {
   const [characterBuild, setCharcterBuild] = useState(
@@ -18,6 +19,8 @@ export default function DamageCalculator() {
   );
 
   const [enemyStats, setEnemyStats] = useState(new EnemyClass({}));
+
+  const [artifactActives, setArtifactActives] = useState({});
 
   useEffect(() => {}, [characterBuild, enemyStats]);
 
@@ -33,6 +36,14 @@ export default function DamageCalculator() {
     setEnemyStats(new EnemyClass(updatedEnemyStat));
   }
 
+  function updateArtifactBuffDmg(buff) {
+    const updatedArtifactActives = artifactActives;
+    //Null value if first time checking
+    updatedArtifactActives[buff] = !artifactActives[buff] ?? true;
+    //Json.parse & stringify clones object, needed to change state to rerender damage console
+    setArtifactActives(JSON.parse(JSON.stringify(updatedArtifactActives)));
+  }
+
   return (
     <Box
       style={{
@@ -44,7 +55,12 @@ export default function DamageCalculator() {
         update={updateCharacterField}
       />
       <EnemyStatus enemyStats={enemyStats} update={updateEnemyField} />
-      <DamageConsole characterBuild={characterBuild} enemyStats={enemyStats} />
+      <ArtifactBuffs update={updateArtifactBuffDmg} />
+      <DamageConsole
+        characterBuild={characterBuild}
+        enemyStats={enemyStats}
+        artifactActives={artifactActives}
+      />
     </Box>
   );
 }
